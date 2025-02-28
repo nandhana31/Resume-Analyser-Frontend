@@ -1,13 +1,118 @@
+/* Global Styles */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  background: url("C:\Users\nandh\Documents\resume_analyzer\backend\resume-frontend\public\background.png") no-repeat center center/cover;
+  color: black; /* Changed text color to black */
+  text-align: center;
+  padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Container Styling */
+.container {
+  background: rgba(255, 255, 255, 0.6); /* Slightly more opaque for better contrast */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 550px;
+  margin: auto;
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black; /* Ensuring header text is black */
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: black; /* Making labels black */
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black; /* Input text in black */
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(0, 0, 0, 0.6); /* Darker placeholder text */
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Button */
+.analyze-button {
+  background: black; /* Changed button color to black */
+  color: white; /* White text for contrast */
+  font-size: 18px;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.analyze-button:hover {
+  background: #333; /* Dark gray on hover */
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Results Section */
+.results {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.results h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black; /* Ensuring result headers are black */
+}
+
+.results p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: black; /* Making text in results black */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  input, textarea {
+      font-size: 14px;
+  }
 }
