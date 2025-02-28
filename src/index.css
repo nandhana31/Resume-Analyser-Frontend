@@ -1,7 +1,15 @@
 /* Global Styles */
 body {
   font-family: "Poppins", sans-serif;
+<<<<<<< HEAD
   background: url("C:\Users\nandh\Documents\resume_analyzer\backend\resume-frontend\public\background.png") no-repeat center center/cover;
+=======
+<<<<<<< HEAD
+  background: url("../public/background.png") no-repeat center center/cover;
+=======
+  background: url("C:\Users\nandh\Documents\resume_analyzer\backend\resume-frontend\public\background.png") no-repeat center center/cover;
+>>>>>>> 88078bc (Initial frontend commit)
+>>>>>>> 7c73344 (Initial frontend commit)
   color: black; /* Changed text color to black */
   text-align: center;
   padding: 20px;
