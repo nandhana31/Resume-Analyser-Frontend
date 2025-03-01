@@ -25,18 +25,20 @@ function App() {
         formData.append("job_description", jobDescription);
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/analyze", {
+            const response = await fetch("https://resume-analyzer-9n68.onrender.com/analyze", {
                 method: "POST",
                 body: formData,
             });
 
             if (!response.ok) {
-                throw new Error("Failed to fetch");
+                const errorText = await response.text();
+                throw new Error(`Server Error: ${errorText}`);
             }
 
             const data = await response.json();
             setAnalysis(data);
         } catch (error) {
+            console.error("Error:", error);
             setError("Error analyzing resume. Please try again.");
         } finally {
             setLoading(false);
@@ -70,10 +72,10 @@ function App() {
             {analysis && (
                 <div className="results">
                     <h2>Analysis Result</h2>
-                    <p><strong>Match Score:</strong> {analysis.match_score}%</p>
-                    <p><strong>Matching Skills:</strong> {analysis.matching_skills.length > 0 ? analysis.matching_skills.join(", ") : "None"}</p>
-                    <p><strong>Missing Skills:</strong> {analysis.missing_skills.length > 0 ? analysis.missing_skills.join(", ") : "None"}</p>
-                    <p><strong>Extracted Skills:</strong> {analysis.skills.join(", ")}</p>
+                    <p><strong>Match Score:</strong> {analysis.match_score || "N/A"}%</p>
+                    <p><strong>Matching Skills:</strong> {analysis.matching_skills?.length > 0 ? analysis.matching_skills.join(", ") : "None"}</p>
+                    <p><strong>Missing Skills:</strong> {analysis.missing_skills?.length > 0 ? analysis.missing_skills.join(", ") : "None"}</p>
+                    <p><strong>Extracted Skills:</strong> {analysis.skills?.length > 0 ? analysis.skills.join(", ") : "None"}</p>
                 </div>
             )}
         </div>
