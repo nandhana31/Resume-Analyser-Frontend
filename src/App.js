@@ -25,7 +25,7 @@ function App() {
         formData.append("job_description", jobDescription);
 
         try {
-            const response = await fetch("https://resume-analyzer-9n68.onrender.com/analyze", {
+            const response = await fetch("https://resume-analyzer-9n68.onrender.com", {
                 method: "POST",
                 body: formData,
             });
